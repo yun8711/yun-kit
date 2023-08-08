@@ -5,6 +5,7 @@
   "bin": {
     "yk": "bin/index.js"
   },
+  "main": "lib/index.js",
   "scripts": {
     "test": "node bin/index.js config",
     "prepare": "husky install",
@@ -21,7 +22,14 @@
     "lib",
     "utils"
   ],
-  "author": "liuyun.dev@qq.com",
+  "author": {
+    "name": "liuyun",
+    "email": "liuyun.dev@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yun8711/yun-kit.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
@@ -50,9 +58,5 @@
     "node": ">=16.0.0",
     "pnpm": ">=7.0.0"
   },
-  "packageManager": "pnpm@7.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yun8711/yun-kie.git"
-  }
+  "packageManager": "pnpm@7.0.0"
 }
