@@ -1,34 +1,58 @@
 {
-  "name": "yun-helper",
-  "version": "0.0.1-alpha.0",
+  "name": "@yun/kit",
+  "version": "0.0.1",
   "description": "前端开发辅助工具",
   "bin": {
-    "yh": "bin/index.js"
+    "yk": "bin/index.js"
   },
   "scripts": {
-    "prepare": "node utils/downloadTemplates.js"
+    "test": "node bin/index.js config",
+    "prepare": "husky install",
+    "commit": "czg",
+    "release": "release-it --config .release-it.cjs",
+    "format": "prettier --write ."
   },
   "keywords": [
     "cli",
     "helper"
   ],
+  "files": [
+    "bin",
+    "lib",
+    "utils"
+  ],
   "author": "liuyun.dev@qq.com",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@release-it/conventional-changelog": "^7.0.0",
     "@types/node": "^20.4.7",
-    "prettier": "^3.0.1"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.1",
+    "release-it": "^16.1.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^11.0.0",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^11.1.1",
-    "glob": "^10.3.3",
     "ora": "^5.4.1",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "shelljs": "^0.8.5"
   },
   "engines": {
     "node": ">=16.0.0",
     "pnpm": ">=7.0.0"
+  },
+  "packageManager": "pnpm@7.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yun8711/yun-kie.git"
   }
 }

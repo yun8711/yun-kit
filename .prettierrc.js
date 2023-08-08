@@ -45,15 +45,4 @@ module.exports = {
   // [弃用] 指定要使用的解析器，可以自定义解析器
   // parser: require("./my-parser")
   // parser: "<string>"
-  // prettier 插件
-  // plugins: ["prettier-plugin-packagejson"],
-  // 针对不同文件的配置
-  // overrides: [
-  //   {
-  //     files: ".prettierrc",
-  //     options: {
-  //       parser: "json",
-  //     },
-  //   },
-  // ],
 };
