@@ -15,7 +15,7 @@ module.exports = {
     // 是否使用使用分支的标签来确定最新标签，默认 false，即只考虑主分支
     getLatestTagFromAllRefs: true,
     // 指定release-it 运行时当前分支，可以用数组指定多个
-    requireBranch: 'master', // 只有在master 才可以运行release-it
+    requireBranch: 'main', // 只有在master 才可以运行release-it
     // 是否在运行release-it之前，保持工作区干净，也就是所有文件已提交
     requireCleanWorkingDir: false,
     // 是否需要上游分支，如果没有上游分支，git push 不知道如何推送。一般在git 未推送到远程前设置为false
@@ -40,9 +40,9 @@ module.exports = {
           { type: 'fix', section: '🐛 Bug Fixes | Bug 修复' },
           { type: 'perf', section: '⚡ Performance Improvements | 性能优化' },
           { type: 'revert', section: '⏪ Reverts | 回退', hidden: true },
-          { type: 'chore', section: '📦 Chores | 其他更新' },
-          { type: 'docs', section: '📝 Documentation | 文档' },
-          { type: 'style', section: '💄 Styles | 风格' },
+          { type: 'chore', section: '📦 Chores | 其他更新', hidden: true },
+          { type: 'docs', section: '📝 Documentation | 文档', hidden: true },
+          { type: 'style', section: '💄 Styles | 风格', hidden: true },
           { type: 'refactor', section: '♻ Code Refactoring | 代码重构' },
           { type: 'test', section: '✅ Tests | 测试', hidden: true },
           { type: 'build', section: '👷‍ Build System | 构建', hidden: true },
