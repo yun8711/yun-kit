@@ -1,28 +1,44 @@
 #!/usr/bin/env node
-const { program } = require("commander");
+const { program } = require('commander');
 // const chalk = require('chalk')
 // const shell = require('shelljs')
-const packageInfo = require("../package.json");
-const process = require("node:process");
+const packageInfo = require('../package.json');
+const process = require('node:process');
 
 // require('../utils/checkNodeVersion')()
 
 // 查询版本号：kd-cli -v | -V | --version
-program.version(packageInfo.version, "-V,-v,--version", "当前版本号");
+program.version(packageInfo.version, '-V,-v,--version', '当前版本号');
 
-// 下载模板库
+// 模板库操作
 program
-  .command("download")
-  .description("下载模板库 | Downloading the template library")
-  .action(() => {
-    require("../utils/downloadTemplates.js");
-  });
+  .command('temp-add <name> <registry>')
+  .description('添加模板库 | Add template library')
+  .action(require('../lib/temp-actions.js').addTemp);
+
+program
+  .command('temp-rm <name>')
+  .description('移除模板库 | Remove template library')
+  .action(require('../lib/temp-actions.js').rmTemp);
+
+program.command('temp-ls').description('列出所有可用的模板 | ').action(require('../lib/temp-actions.js').listTemp);
+
+program
+  .command('temp-use <name>')
+  .description('设置默认模板库 | Set the default template library')
+  .action(require('../lib/temp-actions.js').setDefaultTemp);
+
+program
+  .command('temp-clone <name>')
+  .description('下载模板库 | Download template library')
+  .action(require('../lib/temp-actions.js').cloneTemp);
 
 // 创建配置文件
 program
-  .command("config")
-  .description("创建配置文件 | create configuration files")
-  .action(require("../lib/create-config"));
+  .command('config')
+  .alias('c')
+  .description('创建配置文件 | create configuration files')
+  .action(require('../lib/create-config'));
 
 // // 初始化项目：kd-cli create
 // program
