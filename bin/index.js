@@ -10,24 +10,28 @@ const process = require('node:process');
 // 查询版本号：kd-cli -v | -V | --version
 program.version(packageInfo.version, '-V,-v,--version', '当前版本号');
 
-// 模板库操作
+// 一、模板库操作
+// 添加模板库
 program
   .command('temp-add <name> <registry>')
   .description('添加模板库 | Add template library')
   .action(require('../lib/temp-actions.js').addTemp);
-
+// 删除模板库
 program
   .command('temp-rm <name>')
   .description('移除模板库 | Remove template library')
   .action(require('../lib/temp-actions.js').rmTemp);
-
-program.command('temp-ls').description('列出所有可用的模板 | ').action(require('../lib/temp-actions.js').listTemp);
-
+// 列出所有模板库
+program
+  .command('temp-ls')
+  .description('列出所有可用的模板库 | List all available template libraries')
+  .action(require('../lib/temp-actions.js').listTemp);
+// 设置默认模板库
 program
   .command('temp-use <name>')
   .description('设置默认模板库 | Set the default template library')
-  .action(require('../lib/temp-actions.js').setDefaultTemp);
-
+  .action(require('../lib/temp-actions.js').useTemp);
+// 下载/更新模板库
 program
   .command('temp-clone <name>')
   .description('下载模板库 | Download template library')
