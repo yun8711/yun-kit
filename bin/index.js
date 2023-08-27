@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 const { program } = require('commander');
-// const chalk = require('chalk')
-// const shell = require('shelljs')
 const packageInfo = require('../package.json');
 const process = require('node:process');
-
-// require('../utils/checkNodeVersion')()
 
 // 查询版本号：kd-cli -v | -V | --version
 program.version(packageInfo.version, '-V,-v,--version', '当前版本号');
@@ -39,8 +35,7 @@ program
 
 // 创建配置文件
 program
-  .command('config')
-  .alias('c')
+  .command('config [template-name]')
   .description('创建配置文件 | create configuration files')
   .action(require('../lib/create-config'));
 
