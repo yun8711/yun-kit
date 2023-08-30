@@ -10,34 +10,20 @@ program.version(packageInfo.version, '-V,-v,--version', '当前版本号');
 // 添加模板库
 program
   .command('temp-add <name> <registry>')
-  .description('添加模板库 | Add template library')
+  .option('--link', '链接一个本地模板库', false)
+  .description('添加模板库')
   .action(require('../lib/temp-actions.js').addTemp);
 // 删除模板库
-program
-  .command('temp-rm <name>')
-  .description('移除模板库 | Remove template library')
-  .action(require('../lib/temp-actions.js').rmTemp);
+program.command('temp-rm <name>').description('移除模板库').action(require('../lib/temp-actions.js').rmTemp);
 // 列出所有模板库
-program
-  .command('temp-ls')
-  .description('列出所有可用的模板库 | List all available template libraries')
-  .action(require('../lib/temp-actions.js').listTemp);
+program.command('temp-ls').description('列出所有可用的模板库').action(require('../lib/temp-actions.js').listTemp);
 // 设置默认模板库
-program
-  .command('temp-use <name>')
-  .description('设置默认模板库 | Set the default template library')
-  .action(require('../lib/temp-actions.js').useTemp);
+program.command('temp-use <name>').description('设置默认模板库').action(require('../lib/temp-actions.js').useTemp);
 // 下载/更新模板库
-program
-  .command('temp-clone <name>')
-  .description('下载模板库 | Download template library')
-  .action(require('../lib/temp-actions.js').cloneTemp);
+program.command('temp-clone <name>').description('下载模板库').action(require('../lib/temp-actions.js').cloneTemp);
 
 // 创建配置文件
-program
-  .command('config [template-name]')
-  .description('创建配置文件 | create configuration files')
-  .action(require('../lib/create-config'));
+program.command('config [template-name]').description('创建配置文件').action(require('../lib/create-config'));
 
 // // 初始化项目：kd-cli create
 // program

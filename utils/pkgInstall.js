@@ -32,7 +32,8 @@ const installCmd = {
  */
 function pkgInstall(options = {}, scope = 'dev', depStr = '') {
   const deps = depStr.split(' ');
-  const { engine, extraArgs } = options;
+  const { engine, extraArgs = '' } = options;
+  console.log('extraArgs', extraArgs);
   if (!scope || !deps || deps.length === 0) return;
   let extraArgsArr = extraArgs.split(' ') ?? '';
   return [engine, [installCmd[engine], scopeMap[engine][scope], ...deps, ...extraArgsArr]];
