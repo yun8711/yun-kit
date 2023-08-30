@@ -2,6 +2,13 @@
 
 
 
+## [0.3.0](https://github.com/yun8711/yun-kit/compare/v0.2.0...v0.3.0) (2023-08-30)
+
+
+### ✨ Features | 新功能
+
+* **config:** 优化配置功能，支持添加本地目录为模板库，完善相关逻辑 ([d48ec67](https://github.com/yun8711/yun-kit/commit/d48ec67927cf63c33e576e5627e51526d585213b))
+
 ## [0.2.0](https://github.com/yun8711/yun-kit/compare/0.1.0...v0.2.0) (2023-08-28)
 
 
