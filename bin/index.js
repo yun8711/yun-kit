@@ -14,16 +14,46 @@ program
   .description('添加模板库')
   .action(require('../lib/temp-actions.js').addTemp);
 // 删除模板库
-program.command('temp-rm <name>').description('移除模板库').action(require('../lib/temp-actions.js').rmTemp);
+program
+  .command('temp-rm <name>')
+  .description('移除模板库')
+  .action(require('../lib/temp-actions.js').rmTemp);
 // 列出所有模板库
-program.command('temp-ls').description('列出所有可用的模板库').action(require('../lib/temp-actions.js').listTemp);
+program
+  .command('temp-ls')
+  .description('列出所有可用的模板库')
+  .action(require('../lib/temp-actions.js').listTemp);
 // 设置默认模板库
-program.command('temp-use <name>').description('设置默认模板库').action(require('../lib/temp-actions.js').useTemp);
+program
+  .command('temp-use <name>')
+  .description('设置默认模板库')
+  .action(require('../lib/temp-actions.js').useTemp);
 // 下载/更新模板库
-program.command('temp-clone <name>').description('下载模板库').action(require('../lib/temp-actions.js').cloneTemp);
+program
+  .command('temp-clone <name>')
+  .description('下载模板库')
+  .action(require('../lib/temp-actions.js').cloneTemp);
 
 // 创建配置文件
-program.command('config [template-name]').description('创建配置文件').action(require('../lib/create-config'));
+program
+  .command('config [template-name]')
+  .description('创建配置文件')
+  .action(require('../lib/create-config'));
+
+// 工具方法：压缩dist文件
+program
+  .command('zip-dist')
+  .option('-b,--build', '是否先执行npm run build', false)
+  .option('-n,--name <name>', '压缩包名称')
+  .description('压缩dist目录')
+  .action(require('../lib/zip-actions').zipDist);
+
+// 工具方法：压缩dist文件
+program
+  .command('zip-project')
+  .option('-n,--name <name>', '压缩包名称')
+  .description('压缩项目')
+  .action(require('../lib/zip-actions').zipProject);
 
 // // 初始化项目：kd-cli create
 // program
