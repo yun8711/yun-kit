@@ -2,6 +2,13 @@
 
 
 
+## [0.4.0](https://github.com/yun8711/yun-kit/compare/v0.3.0...v0.4.0) (2023-08-31)
+
+
+### ✨ Features | 新功能
+
+* **utils:** 增加dist、项目源码压缩功能 ([488c8bb](https://github.com/yun8711/yun-kit/commit/488c8bb8238d29315507cee2eeddf2e3479c60fc))
+
 ## [0.3.0](https://github.com/yun8711/yun-kit/compare/v0.2.0...v0.3.0) (2023-08-30)
 
 
