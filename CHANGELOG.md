@@ -2,6 +2,18 @@
 
 
 
+## [0.5.0](https://github.com/yun8711/yun-kit/compare/v0.4.0...v0.5.0) (2023-09-18)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **utils:** 修复zip-dist在build情况下压缩计时错误 ([9b5ade5](https://github.com/yun8711/yun-kit/commit/9b5ade5f1b57327a33359663eec5636054018fd4))
+
+
+### ✨ Features | 新功能
+
+* **utils:** zip-dist命令可以通过-b参数指定构建命令 ([91bbe2a](https://github.com/yun8711/yun-kit/commit/91bbe2a4ae67cd784276cc10376e86c014f73500))
+
 ## [0.4.0](https://github.com/yun8711/yun-kit/compare/v0.3.0...v0.4.0) (2023-08-31)
 
 
