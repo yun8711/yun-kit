@@ -43,8 +43,8 @@ program
 // 工具方法：压缩dist文件
 program
   .command('zip-dist')
-  .option('-b,--build', '是否先执行npm run build', false)
-  .option('-n,--name <name>', '压缩包名称')
+  .option('-b,--build [cmd]', '指定构建命令，无则不执行')
+  .option('-n,--name [name]', '输出压缩文件名称')
   .description('压缩dist目录')
   .action(require('../lib/zip-actions').zipDist);
 

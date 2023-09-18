@@ -84,14 +84,25 @@ yun-kit 支持添加多个模板库，类似 nrm，使用时更自由更开放
 
 ### 项目管理
 
-压缩 dist 目录：`yk zip-dist [options]`
+#### 压缩 dist 目录
 
-- `-b,--build`，是否先执行`npm run build`进行项目构建，默认false
-- `-n,--name`，输出的压缩文件名称，默认为项目名（ package.json 中 name）+时间值（月日时分）
+`yk zip-dist [options]`
 
-压缩项目源码：`yk zip-project [options]`，默认会忽略`node_modules、dist、.vscode、.idea、.git`目录
+- `-b,--build [cmd]`，是否执行进行项目构建，默认不传 -b 参数时不执行构建；只传 -b 则会执行`npm run build`；通过 cmd 可以指定要执行的脚本命令，如：`-b build:demo3`，则会执行 `npm run build:demo3`
 
-- `-n,--name`，输出的压缩文件名称，默认为项目名（ package.json 中 name）+'_source_'+时间值（月日时分）
+
+
+- `-n,--name [name]`，输出的压缩文件名称，默认为项目名（ package.json 中 name）+时间值（月日时分）
+
+
+
+#### 压缩项目代码
+
+`yk zip-project [options]`，
+
+默认会忽略`node_modules、dist、.vscode、.idea、.git`目录
+
+- `-n,--name [name]`，输出的压缩文件名称，默认为项目名（ package.json 中 name）+'\_source\_'+时间值（月日时分）
 
 
 
